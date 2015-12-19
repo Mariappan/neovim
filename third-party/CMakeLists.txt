@@ -80,6 +80,9 @@ else()
 endif()
 
 include(ExternalProject)
+if(WIN32)
+  include(GetWindowsDeps)
+endif()
 
 set(LIBUV_URL https://github.com/libuv/libuv/archive/v1.8.0.tar.gz)
 set(LIBUV_SHA256 906e1a5c673c95cb261adeacdb7308a65b4a8f7c9c50d85f3021364951fa9cde)
