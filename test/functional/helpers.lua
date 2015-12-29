@@ -290,15 +290,27 @@ local function write_file(name, text, dont_dedent)
   file:close()
 end
 
-local function source(code)
-  local tmpname = os.tmpname()
-  if os_name() == 'osx' and string.match(tmpname, '^/tmp') then
-   tmpname = '/private'..tmpname
+local function tmpname()
+  local fname = os.tmpname()
+  if fname:sub(1, 2) == '\\s'  then
+    -- In Windows tmpname() returns a filename starting with
+    -- special sequence \s, prepend $TEMP path
+    local tmpdir = os.getenv('TEMP')
+	return tmpdir .. fname
+  else
+    return fname
   end
-  write_file(tmpname, code)
-  nvim_command('source '..tmpname)
-  os.remove(tmpname)
-  return tmpname
+end
+
+local function source(code)
+  local fname = tmpname()
+  if os_name() == 'osx' and string.match(tmpname, '^/tmp') then
+   fname = '/private'..fname
+  end
+  write_file(fname, code)
+  nvim_command('source '..fname)
+  os.remove(fname)
+  return fname
 end
 
 local function nvim(method, ...)
@@ -507,6 +519,7 @@ return function(after_each)
     curwinmeths = curwinmeths,
     curtabmeths = curtabmeths,
     pending_win32 = pending_win32,
+    tmpname = tmpname,
     NIL = mpack.NIL,
   }
 end
