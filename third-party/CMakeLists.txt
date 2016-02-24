@@ -111,6 +111,9 @@ set(JEMALLOC_SHA256 5630650d5c1caab95d2f0898de4fe5ab8519dc680b04963b38bb425ef6a4
 set(LUV_URL https://github.com/luvit/luv/archive/146f1ce4c08c3b67f604c9ee1e124b1cf5c15cf3.tar.gz)
 set(LUV_SHA256 3d537f8eb9fa5adb146a083eae22af886aee324ec268e2aa0fa75f2f1c52ca7a)
 
+set(WINPTY_URL https://github.com/rprichard/winpty/releases/download/0.4.0/winpty-0.4.0-msvc2015.zip)
+set(WINPTY_SHA256 b81b16bb5967047d9ecf83ef8137121f130d8ea58090caa485c1c7d86bac099a)
+
 if(USE_BUNDLED_UNIBILIUM)
   include(BuildUnibilium)
 endif()
