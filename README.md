@@ -1,5 +1,6 @@
 ![Neovim](https://raw.githubusercontent.com/neovim/neovim.github.io/master/logos/neovim-logo.png)
 
+
 [Website](http://neovim.io) |
 [Community](http://neovim.io/community/) |
 [Wiki](https://github.com/neovim/neovim/wiki) |
