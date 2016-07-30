@@ -12,8 +12,10 @@ environment:
     BUILD_SCRIPT: .ci\msys_build.bat
 install: []
 build_script:
-- if defined BUILD_DEPS_SCRIPT call %BUILD_DEPS_SCRIPT%
+- if defined BUILD_DEPS_SCRIPT if not exist ".deps/usr" call %BUILD_DEPS_SCRIPT%
 - call %BUILD_SCRIPT%
+cache:
+- .deps/usr -> appveyor.yml
 # FIXME(equalsraf): don't generate artifacts until the
 # build script builds the main target, for now pack bin/
 artifacts:
