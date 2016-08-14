@@ -69,6 +69,8 @@ check_symbol_exists(FD_CLOEXEC "fcntl.h" HAVE_FD_CLOEXEC)
 if(HAVE_LANGINFO_H)
   check_symbol_exists(CODESET "langinfo.h" HAVE_NL_LANGINFO_CODESET)
 endif()
+set(CMAKE_REQUIRED_LIBRARIES uv)
+check_symbol_exists(uv_replace_allocator "uv.h" HAVE_UV_REPLACE_ALLOCATOR)
 
 check_include_files("endian.h" HAVE_ENDIAN_H)
 check_include_files("sys/endian.h" HAVE_SYS_ENDIAN_H)

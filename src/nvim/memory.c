@@ -605,3 +605,15 @@ void free_all_mem(void)
 
 #endif
 
+/// Setup the libuv memory allocator.
+///
+/// If using jemalloc this configures libuv to use it, otherwise
+/// this does nothing. This must be called libuv allocates any
+/// memory.
+void mem_alloc_init(void)
+{
+#if defined(HAVE_JEMALLOC) && defined(HAVE_UV_REPLACE_ALLOCATOR)
+  uv_replace_allocator(je_malloc, je_realloc, je_calloc, je_free);
+#endif
+}
+
