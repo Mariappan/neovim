@@ -7,9 +7,11 @@ environment:
   - TARGET: MINGW_64
     BUILD_DEPS_SCRIPT: .ci\msys_build_deps.bat
     BUILD_SCRIPT: .ci\msys_build.bat
+    TEST_SCRIPT: '"%APPVEYOR_BUILD_FOLDER%"\.ci\msys_test.bat'
   - TARGET: MINGW_32
     BUILD_DEPS_SCRIPT: .ci\msys_build_deps.bat
     BUILD_SCRIPT: .ci\msys_build.bat
+    TEST_SCRIPT: '"%APPVEYOR_BUILD_FOLDER%"\.ci\msys_test.bat'
 install: []
 build_script:
 - if defined BUILD_DEPS_SCRIPT call %BUILD_DEPS_SCRIPT%
@@ -18,5 +20,9 @@ build_script:
 - cd build
 - '"%CPACK%" -G NSIS -C Release'
 - '"%CPACK%" -G ZIP -C Release'
+before_test:
+- cd %APPVEYOR_BUILD_FOLDER%\build
+test_script:
+- call %TEST_SCRIPT%
 artifacts:
 - path: build/Neovim.zip
