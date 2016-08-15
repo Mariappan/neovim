@@ -5,6 +5,8 @@ local feed, insert, source, clear, execute, expect, eval, eq =
   helpers.feed, helpers.insert, helpers.source, helpers.clear,
   helpers.execute, helpers.expect, helpers.eval, helpers.eq
 
+if helpers.pending_win32(pending) then return end
+
 describe('tab pages', function()
   before_each(clear)
 

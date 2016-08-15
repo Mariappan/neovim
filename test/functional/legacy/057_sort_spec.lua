@@ -5,6 +5,8 @@ local insert, execute, clear, expect, eq, eval, source = helpers.insert,
   helpers.execute, helpers.clear, helpers.expect, helpers.eq, helpers.eval,
   helpers.source
 
+if helpers.pending_win32(pending) then return end
+
 describe(':sort', function()
   local text = [[
     abc

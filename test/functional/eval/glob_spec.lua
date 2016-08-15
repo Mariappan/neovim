@@ -2,6 +2,8 @@ local lfs = require('lfs')
 local helpers = require('test.functional.helpers')(after_each)
 local clear, execute, eval, eq = helpers.clear, helpers.execute, helpers.eval, helpers.eq
 
+if helpers.pending_win32(pending) then return end
+
 before_each(function()
   clear()
   lfs.mkdir('test-glob')

@@ -4,6 +4,8 @@ local helpers = require('test.functional.helpers')(after_each)
 local feed, insert, source = helpers.feed, helpers.insert, helpers.source
 local clear, execute, expect = helpers.clear, helpers.execute, helpers.expect
 
+if helpers.pending_win32(pending) then return end
+
 describe('listlbr', function()
   setup(clear)
 

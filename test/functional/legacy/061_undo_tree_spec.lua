@@ -11,6 +11,8 @@ local feed = helpers.feed
 local eval = helpers.eval
 local eq = helpers.eq
 
+if helpers.pending_win32(pending) then return end
+
 local function expect_empty_buffer()
   -- The space will be removed by helpers.dedent but is needed because dedent
   -- will fail if it can not find the common indent of the given lines.

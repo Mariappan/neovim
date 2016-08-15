@@ -5,6 +5,8 @@ local clear = helpers.clear
 local expect = helpers.expect
 local source = helpers.source
 
+if helpers.pending_win32(pending) then return end
+
 describe('match_conceal', function()
   before_each(function()
     clear()

@@ -9,6 +9,8 @@ local eq = helpers.eq
 
 local reset = plugin_helpers.reset
 
+if helpers.pending_win32(pending) then return end
+
 describe('matchparen', function() 
   local screen
 

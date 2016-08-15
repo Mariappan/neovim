@@ -8,6 +8,8 @@ local NIL = helpers.NIL
 local plugin_helpers = require('test.functional.plugin.helpers')
 local reset = plugin_helpers.reset
 
+if helpers.pending_win32(pending) then return end
+
 describe('In autoload/msgpack.vim', function()
   before_each(reset)
 

@@ -8,6 +8,8 @@ local wait = helpers.wait
 local curwinmeths = helpers.curwinmeths
 local funcs = helpers.funcs
 
+if helpers.pending_win32(pending) then return end
+
 -- check if str is visible at the beginning of some line
 local function is_visible(str)
     local slen = string.len(str)

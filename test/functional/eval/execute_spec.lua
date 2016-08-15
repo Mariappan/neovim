@@ -9,6 +9,8 @@ local funcs = helpers.funcs
 local Screen = require('test.functional.ui.screen')
 local feed = helpers.feed
 
+if helpers.pending_win32(pending) then return end
+
 describe('execute()', function()
   before_each(clear)
 

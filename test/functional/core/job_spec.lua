@@ -7,6 +7,7 @@ local clear, eq, eval, execute, feed, insert, neq, next_msg, nvim,
   helpers.write_file, helpers.mkdir, helpers.rmdir
 local Screen = require('test.functional.ui.screen')
 
+if helpers.pending_win32(pending) then return end
 
 describe('jobs', function()
   local channel

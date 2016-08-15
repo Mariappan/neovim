@@ -5,6 +5,8 @@ local source = helpers.source
 local clear, expect = helpers.clear, helpers.expect
 local write_file = helpers.write_file
 
+if helpers.pending_win32(pending) then return end
+
 describe('exists() and has() functions', function()
   setup(function()
     clear()

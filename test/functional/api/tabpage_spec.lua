@@ -6,6 +6,8 @@ local clear, nvim, tabpage, curtab, eq, ok =
 local curtabmeths = helpers.curtabmeths
 local funcs = helpers.funcs
 
+if helpers.pending_win32(pending) then return end
+
 describe('tabpage_* functions', function()
   before_each(clear)
 

@@ -6,6 +6,8 @@ local helpers = require('test.functional.helpers')(after_each)
 local clear, feed, insert = helpers.clear, helpers.feed, helpers.insert
 local execute, expect = helpers.execute, helpers.expect
 
+if helpers.pending_win32(pending) then return end
+
 describe('BufEnter with modelines', function()
   setup(clear)
 

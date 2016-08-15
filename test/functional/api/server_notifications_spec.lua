@@ -5,6 +5,8 @@ local eq, clear, eval, execute, nvim, next_message =
   helpers.next_message
 local meths = helpers.meths
 
+if helpers.pending_win32(pending) then return end
+
 describe('notify', function()
   local channel
 

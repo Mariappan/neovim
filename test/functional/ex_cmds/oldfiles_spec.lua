@@ -7,6 +7,8 @@ local ok, set_session, spawn = helpers.ok, helpers.set_session, helpers.spawn
 
 local shada_file = 'test.shada'
 
+if helpers.pending_win32(pending) then return end
+
 --
 -- helpers.clear() uses "-i NONE", which is not useful for this test.
 --

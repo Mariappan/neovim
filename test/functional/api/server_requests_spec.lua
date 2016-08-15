@@ -6,6 +6,7 @@ local clear, nvim, eval = helpers.clear, helpers.nvim, helpers.eval
 local eq, neq, run, stop = helpers.eq, helpers.neq, helpers.run, helpers.stop
 local nvim_prog = helpers.nvim_prog
 
+if helpers.pending_win32(pending) then return end
 
 describe('server -> client', function()
   local cid

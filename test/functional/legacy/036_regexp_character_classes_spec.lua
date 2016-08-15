@@ -5,6 +5,8 @@ local clear, execute, expect = helpers.clear, helpers.execute, helpers.expect
 local source, write_file = helpers.source, helpers.write_file
 local os_name = helpers.os_name
 
+if helpers.pending_win32(pending) then return end
+
 local function sixlines(text)
     local result = ''
     for _ = 1, 6 do

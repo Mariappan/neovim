@@ -5,6 +5,8 @@ local source = helpers.source
 local feed = helpers.feed
 local clear, expect = helpers.clear, helpers.expect
 
+if helpers.pending_win32(pending) then return end
+
 describe('linebreak', function()
   setup(clear)
 

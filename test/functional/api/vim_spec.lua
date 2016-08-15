@@ -8,6 +8,8 @@ local os_name = helpers.os_name
 local meths = helpers.meths
 local funcs = helpers.funcs
 
+if helpers.pending_win32(pending) then return end
+
 describe('vim_* functions', function()
   before_each(clear)
 

@@ -4,6 +4,8 @@ local helpers = require('test.functional.helpers')(after_each)
 local clear, insert = helpers.clear, helpers.insert
 local execute, expect = helpers.execute, helpers.expect
 
+if helpers.pending_win32(pending) then return end
+
 describe(':edit', function()
   setup(clear)
 

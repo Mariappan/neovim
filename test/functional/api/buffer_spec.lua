@@ -5,6 +5,8 @@ local curbuf, curwin, eq = helpers.curbuf, helpers.curwin, helpers.eq
 local curbufmeths, ok = helpers.curbufmeths, helpers.ok
 local funcs = helpers.funcs
 
+if helpers.pending_win32(pending) then return end
+
 describe('buffer_* functions', function()
   before_each(clear)
 

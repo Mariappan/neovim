@@ -6,6 +6,8 @@ local feed, insert = helpers.feed, helpers.insert
 local eval, clear, execute = helpers.eval, helpers.clear, helpers.execute
 local eq, neq = helpers.eq, helpers.neq
 
+if helpers.pending_win32(pending) then return end
+
 describe('063: Test for ":match", "matchadd()" and related functions', function()
   setup(clear)
 

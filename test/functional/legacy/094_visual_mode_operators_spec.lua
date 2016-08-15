@@ -8,6 +8,8 @@ local helpers = require('test.functional.helpers')(after_each)
 local feed, insert, source = helpers.feed, helpers.insert, helpers.source
 local clear, execute, expect = helpers.clear, helpers.execute, helpers.expect
 
+if helpers.pending_win32(pending) then return end
+
 -- Vim script user functions needed for some of the test cases.
 local function source_user_functions()
   source([[

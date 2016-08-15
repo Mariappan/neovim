@@ -5,6 +5,8 @@ local clear = helpers.clear
 local execute, expect = helpers.execute, helpers.expect
 local source = helpers.source
 
+if helpers.pending_win32(pending) then return end
+
 describe(':execute, :while and :if', function()
   setup(clear)
 

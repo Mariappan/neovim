@@ -4,6 +4,8 @@ local ok, feed, eq, eval = helpers.ok, helpers.feed, helpers.eq, helpers.eval
 local source, nvim_async, run = helpers.source, helpers.nvim_async, helpers.run
 local clear, execute, funcs = helpers.clear, helpers.execute, helpers.funcs
 
+if helpers.pending_win32(pending) then return end
+
 describe('timers', function()
   before_each(function()
     clear()

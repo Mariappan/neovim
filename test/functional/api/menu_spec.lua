@@ -5,6 +5,8 @@ local clear = helpers.clear
 local command = helpers.command
 local feed = helpers.feed
 
+if helpers.pending_win32(pending) then return end
+
 describe("update_menu notification", function()
 
   local screen

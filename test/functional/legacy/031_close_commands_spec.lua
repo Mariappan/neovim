@@ -18,6 +18,8 @@ local insert = helpers.insert
 local expect = helpers.expect
 local execute = helpers.execute
 
+if helpers.pending_win32(pending) then return end
+
 describe('Commands that close windows and/or buffers', function()
   setup(clear)
 

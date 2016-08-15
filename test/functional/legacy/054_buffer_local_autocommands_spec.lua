@@ -4,6 +4,8 @@ local helpers = require('test.functional.helpers')(after_each)
 local clear, execute, eq = helpers.clear, helpers.execute, helpers.eq
 local curbuf_contents = helpers.curbuf_contents
 
+if helpers.pending_win32(pending) then return end
+
 describe('BufLeave <buffer>', function()
   setup(clear)
 

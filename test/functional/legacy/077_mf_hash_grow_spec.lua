@@ -10,6 +10,8 @@ local helpers = require('test.functional.helpers')(after_each)
 local feed = helpers.feed
 local clear, execute, expect = helpers.clear, helpers.execute, helpers.expect
 
+if helpers.pending_win32(pending) then return end
+
 describe('mf_hash_grow()', function()
   setup(clear)
 

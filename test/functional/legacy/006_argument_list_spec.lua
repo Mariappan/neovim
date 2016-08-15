@@ -5,6 +5,8 @@ local clear, feed, insert = helpers.clear, helpers.feed, helpers.insert
 local execute, dedent, eq = helpers.execute, helpers.dedent, helpers.eq
 local curbuf_contents = helpers.curbuf_contents
 
+if helpers.pending_win32(pending) then return end
+
 describe('argument list', function()
   setup(clear)
 

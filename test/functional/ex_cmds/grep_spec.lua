@@ -2,6 +2,8 @@ local helpers = require('test.functional.helpers')(after_each)
 local clear, execute, feed, ok, eval =
   helpers.clear, helpers.execute, helpers.feed, helpers.ok, helpers.eval
 
+if helpers.pending_win32(pending) then return end
+
 describe(':grep', function()
   before_each(clear)
 
