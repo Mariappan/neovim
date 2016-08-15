@@ -10,7 +10,7 @@ endif()
 if(DEFINED ENV{TEST_FILE})
   set(TEST_PATH "$ENV{TEST_FILE}")
 else()
-  set(TEST_PATH "${TEST_DIR}/${TEST_TYPE}")
+  set(TEST_PATH "${TEST_DIR}/${TEST_TYPE}/*")
 endif()
 
 if(BUSTED_OUTPUT_TYPE STREQUAL junit)
