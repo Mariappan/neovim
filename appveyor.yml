@@ -23,7 +23,8 @@ build_script:
 before_test:
 - cd %APPVEYOR_BUILD_FOLDER%\build
 test_script:
-- call %TEST_SCRIPT%
+# Ups I forgot to run the tests (this should fail)
+#- call %TEST_SCRIPT%
 # Upload test results to Appveyor build console
 - ps: (new-object System.Net.WebClient).UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path  .\functionaltest-junit.xml))
 artifacts:
