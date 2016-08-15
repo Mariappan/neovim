@@ -3,7 +3,6 @@ local clear, nvim, source = helpers.clear, helpers.nvim, helpers.source
 local eq, next_msg = helpers.eq, helpers.next_message
 local exc_exec = helpers.exc_exec
 
-
 describe('dictionary change notifications', function()
   local channel
 
