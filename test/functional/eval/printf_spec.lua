@@ -4,7 +4,7 @@ local eq = helpers.eq
 local funcs = helpers.funcs
 local exc_exec = helpers.exc_exec
 
-describe('printf()', function()
+describe('printf() #windows', function()
   before_each(clear)
 
   it('works with zero and %b', function()
