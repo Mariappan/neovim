@@ -15,11 +15,6 @@ local curbufmeths = helpers.curbufmeths
 
 do
   clear()
-  if helpers.os_name() == 'windows' then
-    pending('FIXME: Windows', function() end)
-    return
-  end
-
   command('let [g:interp, g:errors] = provider#pythonx#Detect(2)')
   local errors = meths.get_var('errors')
   if errors ~= '' then

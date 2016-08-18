@@ -5,11 +5,6 @@ local expect, write_file = helpers.expect, helpers.write_file
 
 do
   clear()
-  if helpers.os_name() == 'windows' then
-    pending('FIXME: Windows', function() end)
-    return
-  end
-
   command('let [g:interp, g:errors] = provider#pythonx#Detect(3)')
   local errors = eval('g:errors')
   if errors ~= '' then
