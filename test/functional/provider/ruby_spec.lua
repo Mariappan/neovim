@@ -13,11 +13,6 @@ local curbufmeths = helpers.curbufmeths
 
 do
   clear()
-  if helpers.os_name() == 'windows' then
-    pending('FIXME: Windows', function() end)
-    return
-  end
-
   command('let g:prog = provider#ruby#Detect()')
   local prog = meths.get_var('prog')
 
