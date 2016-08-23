@@ -8,7 +8,7 @@ describe('getcwd', function()
   before_each(clear)
 
   after_each(function()
-	clear()
+    execute('q')
     helpers.rmdir('Xtopdir')
   end)
 
