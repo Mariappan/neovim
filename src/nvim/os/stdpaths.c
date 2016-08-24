@@ -22,9 +22,9 @@ static const char *xdg_env_vars[] = {
 static const char *const xdg_defaults[] = {
 #ifdef WIN32
   // Windows
-  [kXDGConfigHome] = "LOCALAPPDATA",
-  [kXDGDataHome]   = "LOCALAPPDATA",
-  [kXDGCacheHome]  = "TEMP",
+  [kXDGConfigHome] = "~\\AppData\\Local",
+  [kXDGDataHome]   = "~\\AppData\\Local",
+  [kXDGCacheHome]  = "~\\AppData\\Local\\Temp",
   [kXDGRuntimeDir] = NULL,
   [kXDGConfigDirs] = NULL,
   [kXDGDataDirs] = NULL,
