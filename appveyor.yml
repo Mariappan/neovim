@@ -11,6 +11,8 @@ environment:
     BUILD_DEPS_SCRIPT: .ci\msys_build_deps.bat
     BUILD_SCRIPT: .ci\msys_build.bat
 install: []
+init:
+  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 build_script:
 - if defined BUILD_DEPS_SCRIPT call %BUILD_DEPS_SCRIPT%
 - call %BUILD_SCRIPT%
@@ -18,5 +20,7 @@ build_script:
 - cd build
 - '"%CPACK%" -G NSIS -C Release'
 - '"%CPACK%" -G ZIP -C Release'
+on_finish:
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 artifacts:
 - path: build/Neovim.zip
